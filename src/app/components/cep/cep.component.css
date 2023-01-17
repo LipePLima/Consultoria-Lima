@@ -1,0 +1,51 @@
+.container__cep {
+  height: 512px;
+  margin: 58px 156px 96px 156px;
+  background-color: #D1D1D1;
+  border-radius: 10px;
+  padding: 46px 0 0 56px;
+  font-family: 'Lato', sans-serif;
+}
+
+.title__cep {
+  font-size: 32px;
+  font-weight: 600;
+  color: #2E266D;
+  margin-bottom: 46px;
+}
+
+.container-input__cep {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-cep {
+  font-size: 22px;
+  color: #575757;
+  margin: 0 0 .5rem .3rem;
+}
+
+.input-cep {
+  font-size: 20px;
+  width: 320px;
+  height: 36px;
+  padding-left: .5rem;
+  border-radius: 10px;
+  border: none;
+}
+
+.btn-cep {
+  font-size: 16px;
+  font-weight: 500;
+  width: 90px;
+  height: 40px;
+  margin: 1rem 0 0 .3rem;
+  background-color: #0071AD;
+  color: #ffff;
+  border-radius: 10px;
+  border: none;
+}
+
+.btn-cep:hover {
+  background-color: #00416B;
+}

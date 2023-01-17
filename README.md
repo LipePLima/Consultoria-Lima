@@ -8,6 +8,8 @@
 
  - [x] Cabeçalho feito;
 
- - [ ] Corpo do site com a opção escolhida;
+ - [x] Corpo do site com a opção CEP;
+
+ - [ ] Corpo do site com a opção Rastreamento;
 
  - [ ] Rodapé com opções(CEP e Rastramento) e Copyright 
