@@ -1,0 +1,30 @@
+@media screen and (max-width: 430px) {
+  .container__footer {
+    height: auto;
+  }
+
+  .content__footer {
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0;
+  }
+
+  .footer-item:hover {
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .footer-item:active {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  .footer-item0 {
+    margin-bottom: 2rem;
+  }
+
+  .footer-item1 {
+    order: 2;
+    margin: 2rem 0 0 0;
+  }
+}
