@@ -4,7 +4,7 @@
 
 ## Etapas 
 
-**Mobile Firt**
+**Desktop Firt**
 
  - [x] Cabeçalho feito;
 
@@ -13,6 +13,12 @@
  - [x] Corpo do site com a opção Rastreamento;
 
  - [x] Rodapé com opções(CEP e Rastramento) e Copyright;
+
+**Mobile**
+
+ - [x] Cabeçalho responsivo;
+
+ - [x] Corpo do site com a opção CEP responsivo;
 
  *Funcionalidades*
 
