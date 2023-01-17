@@ -20,8 +20,10 @@
 
 .menu-item {
   font: 500 22px 'Lato', sans-serif;
-  text-decoration: none;
   color: #000;
+  padding: 0;
+  background-color: transparent;
+  border: none;
 }
 
 .menu-item:hover {

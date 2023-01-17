@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CepComponent } from './components/cep/cep.component';
+import { RastreamentoComponent } from './components/rastreamento/rastreamento.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CepComponent
+    CepComponent,
+    RastreamentoComponent
   ],
   imports: [
     BrowserModule,
