@@ -1,8 +1,12 @@
 # Consultoria Lima
 
+ - [Etapas](#etapas);
+
 ## Etapas 
 
- - [ ] Cabeçalho;
+**Mobile Firt**
+
+ - [x] Cabeçalho feito;
 
  - [ ] Corpo do site com a opção escolhida;
 

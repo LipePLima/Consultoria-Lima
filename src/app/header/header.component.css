@@ -1,0 +1,33 @@
+.container__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 168px;
+  padding: 0 156px;
+  background-color: #9C9C9C;
+}
+
+.img__header {
+  width: 250px;
+  height: 250px;
+}
+
+.menu__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-item {
+  font: 500 26px 'Lato', sans-serif;;
+  text-decoration: none;
+  color: #000;
+}
+
+.menu-item:hover {
+  text-decoration: underline;
+}
+
+.cep {
+  margin-right: 4rem;
+  text-transform: uppercase;
+}
