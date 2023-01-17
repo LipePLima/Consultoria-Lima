@@ -22,6 +22,8 @@
 
  - [x] Corpo do site com a opção Rastreamento responsivo;
 
+ - [x] Rodapé responsivo;
+
  *Funcionalidades*
 
  - [ ] Localizar CEP e exibir na tela estilizado em tabela;
