@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CepComponent } from './components/cep/cep.component';
 import { RastreamentoComponent } from './components/rastreamento/rastreamento.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CepComponent,
-    RastreamentoComponent
+    RastreamentoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
