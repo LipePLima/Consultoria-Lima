@@ -5,6 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './cep.component.html',
   styleUrls: ['./cep.component.css', './cepMQ.component.css']
 })
-export class CepComponent {
 
+export class CepComponent {
+  captCep(): void {
+    const cep = document.querySelector('#iCep')
+    console.log(cep!)
+  }
 }
