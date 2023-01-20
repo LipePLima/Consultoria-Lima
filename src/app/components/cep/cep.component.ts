@@ -1,5 +1,5 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-cep',
@@ -8,8 +8,21 @@ import { HttpClientModule } from '@angular/common/http';
 })
 
 export class CepComponent {
-  captCep(): void {
-    const cep = document.querySelector('#iCep')
-    console.log(cep!)
+  constructor(private httpClient: HttpClient){}
+
+  public inputCep: string | undefined
+
+  getAddress(): void {
+    if (this.inputCep?.length === 8) {
+      let url: string = `https://api.postmon.com.br/v1/cep/${this.inputCep}`
+      this.httpClient.get(url).toPromise().then(data => {
+        console.log(data)
+      })
+    } else {
+      const input: HTMLElement | null = document.getElementById('iCep');
+      if (input !== null) {
+        input.style.border = '1px solid red'
+      }
+    }
   }
 }

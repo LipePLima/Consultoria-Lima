@@ -2,7 +2,8 @@
   <h1 class="title__cep">Busca CEP</h1>
   <div class="container-input__cep">
     <label for="iCep" class="label-cep">Digite um n° de CEP:</label>
-    <input type="text" class="input-cep" id="iCep">
+    <input type="text" maxlength="8" class="input-cep" id="iCep" [(ngModel)]="inputCep">
+    <p class="erro">Digite 8 números</p>
   </div>
-  <button class="btn-cep" (click)="captCep()">Buscar</button>
+  <button class="btn-cep" (click)="getAddress()">Buscar</button>
 </section>

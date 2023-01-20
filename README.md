@@ -26,6 +26,10 @@
 
  *Funcionalidades*
 
- - [ ] Localizar CEP e exibir na tela estilizado em tabela;
+ - [x] Inserir CEP no input e ao clicar no botão "Buscar" mostrar informações do cep no console;
+
+ - [ ] Organizar Informações do CEP em uma tabela;
+
+ - [ ] Validar dados do input;
 
  - [ ] Localizar encomenda e exibir na tela estilizado;
