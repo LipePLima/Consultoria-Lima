@@ -28,7 +28,9 @@
 
  - [x] Inserir CEP no input e ao clicar no botão "Buscar" mostrar informações do cep no console;
 
- - [ ] Organizar Informações do CEP em uma tabela;
+ - [x] Criar tabela com informações do CEP;
+
+ - [ ] Organizar Informações do CEP na tabela;
 
  - [ ] Validar dados do input;
 

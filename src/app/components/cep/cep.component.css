@@ -35,6 +35,7 @@
 }
 
 .erro {
+  display: none;
   font-size: 13px;
   color: red;
   margin: .5rem 0 0 .3rem;
@@ -54,4 +55,56 @@
 
 .btn-cep:hover {
   background-color: #00416B;
+}
+
+.container__table {
+  display: flex;
+  justify-content : center;
+}
+
+.table-thead {
+  display: flex;
+  align-items: center;
+  background-color: #008db1;
+  height: 3rem;
+  margin-top: 5rem;
+  border-radius: 5px 5px 0 0;
+}
+
+.thead-line {
+  margin: 0 1rem;
+}
+
+.line-log {
+  width: 240px;
+}
+
+.line-nei {
+  width: 180px;
+}
+
+.line-loc {
+  width: 180px;
+}
+
+.line-cep {
+  width: 80px;
+}
+
+.table-tbody {
+  background-color: #ffff;
+}
+
+.tbody-line {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  height: 2rem;
+  margin: 0 1rem;
+}
+
+.tbody-info {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
