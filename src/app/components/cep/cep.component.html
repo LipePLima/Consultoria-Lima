@@ -1,12 +1,14 @@
 <section class="container__cep">
-  <form class="form" (ngSubmit)="returnAddress()">
     <h1 class="title__cep">Busca CEP</h1>
+
     <div class="container-input__cep">
       <label for="iCep" class="label-cep">Digite um n° de CEP:</label>
-      <input type="text" maxlength="8" class="input-cep" id="iCep" [(ngModel)]="inputCep">
+      <input type="text" maxlength="8" class="input-cep" id="iCep" name="inputCep" ngModel #inputCep="ngModel">
       <p class="erro">Digite 8 números</p>
     </div>
-    <button class="btn-cep" type="submit">Buscar</button>
+
+    <button class="btn-cep" type="submit" (click)="getAddress(inputCep.value)">Buscar</button>
+
     <div class="container__table" id="container__table">
       <table class="table__cep">
         <thead class="table-thead">
@@ -18,14 +20,14 @@
           </tr>
         </thead>
         <tbody class="table-tbody" id="table-tbody">
-          <tr class="tbody-line" id="tbody-line">
-            <td class="tbody-info line-log">Felipe</td>
-            <td class="tbody-info line-nei">Lima</td>
-            <td class="tbody-info line-loc">21</td>
-            <td class="tbody-info line-cep">RJ</td>
+          <tr  class="tbody-line"  id="tbody-line">
+            <td class="tbody-info line-log" name="logradouro" id="logradouro"></td>
+            <td class="tbody-info line-nei" name="bairro"     id="bairro"></td>
+            <td class="tbody-info line-loc" name="uf"         id="uf"></td>
+            <td class="tbody-info line-cep" name="cep"        id="cep"></td>
           </tr>
         </tbody>
       </table>
     </div>
-  </form>
+
 </section>

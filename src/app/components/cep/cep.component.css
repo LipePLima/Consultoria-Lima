@@ -58,7 +58,7 @@
 }
 
 .container__table {
-  display: none;
+  display: flex;
   justify-content : center;
 }
 
