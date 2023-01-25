@@ -30,7 +30,7 @@
 
  - [x] Criar tabela com informações do CEP;
 
- - [ ] Organizar Informações do CEP na tabela;
+ - [x] Organizar Informações do CEP na tabela;
 
  - [ ] Validar dados do input;
 

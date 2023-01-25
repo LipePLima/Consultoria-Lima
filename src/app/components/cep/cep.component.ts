@@ -13,34 +13,27 @@ export class CepComponent {
   ){}
 
   public getAddress(cep: any) {
-    this.cepService.searchAddress(cep).toPromise().then( (data: any) => {
-      const cepEl:  Element | null = document.querySelector('#cep');
-      const log:    Element | null = document.querySelector('#logradouro');
-      const bairro: Element | null = document.querySelector('#bairro');
-      const cidade: Element | null = document.querySelector('#cidade');
-      const uf:     Element | null = document.querySelector('#ud');
+    const inputErroBorder: HTMLElement | null = document.getElementById('iCep');
+    const inputErro:       HTMLElement | null = document.querySelector('.erro');
 
-      if (cepEl != null && log != null && bairro != null && cidade != null && uf != null) {
-        cepEl.textContent  = data.cep;
-        log.textContent    = data.logradouro;
-        bairro.textContent = data.bairro;
-        cidade.textContent = data.localidade;
-        uf.textContent     = data.uf;
-      }
-    });
+    if (cep.length < 8) {
+      inputErro!.style.display      = 'initial'
+      inputErroBorder!.style.border = '1px solid red'
+    } else {
+      inputErro!.style.display      = 'none'
+      inputErroBorder!.style.border = 'none'
 
-    // Área de erro
-    // const inputErroBorder: HTMLElement | null = document.getElementById('iCep');
-    // const inputErro: HTMLElement | null       = document.querySelector('.erro');
+      this.cepService.searchAddress(cep).toPromise().then( (data: any) => {
+        const cepEl:      Element | null = document.querySelector('#cep');
+        const log:        Element | null = document.querySelector('#logradouro');
+        const bairro:     Element | null = document.querySelector('#bairro');
+        const localidade: Element | null = document.querySelector('#localidade');
 
-    // if (inputErroBorder !== null && inputErro !== null) {
-    //   inputErro.style.display      = 'none'
-    //   inputErroBorder.style.border = 'none'
-    // } else {
-    //   if (inputErroBorder != null && inputErro != null) {
-    //     inputErro.style.display      = 'initial'
-    //     inputErroBorder.style.border = '1px solid red'
-    //   }
-    // }
+        cepEl!.textContent      = data.cep;
+        log!.textContent        = data.logradouro;
+        bairro!.textContent     = data.bairro; ;
+        localidade!.textContent = `${data.localidade}/${data.uf}`;
+      });
+    }
   }
 }
