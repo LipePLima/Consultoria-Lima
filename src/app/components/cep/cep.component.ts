@@ -12,12 +12,12 @@ export class CepComponent {
     private cepService: SearchCepService,
   ){}
 
-  public getAddress(cep: any) {
+  public getAddress(cep: any): void {
     const inputErroBorder: HTMLElement | null = document.getElementById('iCep');
-    const inputErro:       HTMLElement | null = document.querySelector('.erro');
-    const table:               Element | null = document.querySelector('#container__table');
+    const inputErro:       HTMLElement | null = document.getElementById('erro');
+    const div:                 Element | null = document.getElementById('container__info');
 
-    const convertTable = table as HTMLElement;
+    const convertDiv = div as HTMLElement;
 
     cep = cep.replace(/\D/g, '');
 
@@ -30,7 +30,9 @@ export class CepComponent {
     } else {
       inputErro!.style.display      = 'none'
       inputErroBorder!.style.border = 'none'
-      convertTable!.style.display   = 'flex'
+      convertDiv!.style.display     = 'flex'
+
+      this.smallWindow(cep)
 
       this.cepService.searchAddress(cep).toPromise().then( (data: any) => {
         const cepEl:      Element | null = document.querySelector('#cep');
@@ -51,5 +53,20 @@ export class CepComponent {
     erro!.textContent    = text
     erro!.style.display  = 'initial'
     border!.style.border = '1px solid red'
+  }
+
+  private smallWindow (cep: any) {
+    this.cepService.searchAddress(cep).toPromise().then( (data: any) => {
+      const cepEl:      Element | null = document.querySelector('#info__cep');
+      const log:        Element | null = document.querySelector('#info__logradouro');
+      const bairro:     Element | null = document.querySelector('#info__bairro');
+      const localidade: Element | null = document.querySelector('#info__localidade');
+
+      cepEl!.textContent      = data.cep;
+      log!.textContent        = data.logradouro;
+      bairro!.textContent     = data.bairro; ;
+      localidade!.textContent = `${data.localidade}/${data.uf}`;
+
+    });
   }
 }

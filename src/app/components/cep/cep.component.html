@@ -4,13 +4,13 @@
     <div class="container-input__cep">
       <label for="iCep" class="label-cep">Digite um n° de CEP:</label>
       <input type="text" maxlength="8" class="input-cep" id="iCep" name="inputCep" ngModel #inputCep="ngModel">
-      <p class="erro"></p>
+      <p class="erro" id="erro"></p>
     </div>
 
     <button class="btn-cep" type="submit" (click)="getAddress(inputCep.value)">Buscar</button>
 
-    <div class="container__table" id="container__table">
-      <table class="table__cep">
+    <div class="container__info" id="container__info">
+      <table class="table__cep" id="table__cep">
         <thead class="table-thead">
           <tr class="thead-line">
             <td class="theade-title line-log">Logradouro</td>
@@ -28,6 +28,20 @@
           </tr>
         </tbody>
       </table>
+
+      <div class="content__info" id="content__info">
+        <label for="info__logradouro" class="info__label">Logradouro</label>
+        <p class="info__p" id="info__logradouro">Rua Paulo Emilio Correia</p>
+
+        <label for="info__bairro"     class="info__label">Bairro</label>
+        <p class="info__p" id="info__bairro">Jacutinga</p>
+
+        <label for="info__localidade" class="info__label">Localidade/UF</label>
+        <p class="info__p" id="info__localidade">Mesquita/RJ</p>
+
+        <label for="info__cep"        class="info__label">CEP</label>
+        <p class="info__p" id="info__cep">26564-120</p>
+      </div>
     </div>
 
 </section>

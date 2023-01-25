@@ -3,7 +3,7 @@
   margin: 58px 156px 96px 156px;
   background-color: #D1D1D1;
   border-radius: 10px;
-  padding: 46px 0 0 56px;
+  padding: 46px 56px 0 56px;
   font-family: 'Lato', sans-serif;
 }
 
@@ -57,11 +57,14 @@
   background-color: #00416B;
 }
 
-.container__table {
+/* INFORMAÇÕES DO CEP */
+.container__info {
   display: none;
   justify-content : center;
+  margin-bottom: 3rem;
 }
 
+/* INFO DESKTOP */
 .table-thead {
   display: flex;
   align-items: center;
@@ -107,4 +110,26 @@
   display: flex;
   align-items: center;
   height: 100%;
+}
+
+
+/* INFO MOBILE */
+.content__info {
+  display: none;
+  font-family: 'Lato', sans-serif;
+  width: 100%;
+  background-color: #ffff;
+  box-shadow: 5px 8px 19px -5px rgba(0, 0, 0,0.3);
+  border-radius: 10px;
+  margin-top: 2rem;
+  padding: 12px 12px;
+}
+
+.info__label {
+  color: rgb(114, 114, 114);
+  font-size: 14px;
+}
+
+.info__p {
+  margin: .2rem 0 1rem 0;
 }

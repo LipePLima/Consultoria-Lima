@@ -24,7 +24,7 @@
 
  - [x] Rodapé responsivo;
 
- - [ ] Tornar a tabela de CEP responsiva;
+ - [x] Tornar a tabela de CEP responsiva;
 
  *Funcionalidades*
 

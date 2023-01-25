@@ -4,7 +4,21 @@
   }
 }
 
+@media screen and (max-width: 856px) {
+  .table__cep {
+    display: none;
+  }
+  
+  .content__info {
+    display: initial;
+  }
+}
+
 @media screen and (max-width: 610px) {
+  .container__cep {
+    margin: 58px 42px 96px 42px;
+  }
+
   .input-cep {
     width: calc(100% - 56px);
   }
@@ -12,7 +26,7 @@
 
 @media screen and (max-width: 450px) {
   .container__cep {
-    margin: 58px 20px 96px 20px;
+    margin: 58px 22px 96px 22px;
   }
   .title__cep {
     font-size: 22px;
