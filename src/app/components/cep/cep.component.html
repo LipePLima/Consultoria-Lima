@@ -4,7 +4,7 @@
     <div class="container-input__cep">
       <label for="iCep" class="label-cep">Digite um n° de CEP:</label>
       <input type="text" maxlength="8" class="input-cep" id="iCep" name="inputCep" ngModel #inputCep="ngModel">
-      <p class="erro">Digite 8 números</p>
+      <p class="erro"></p>
     </div>
 
     <button class="btn-cep" type="submit" (click)="getAddress(inputCep.value)">Buscar</button>

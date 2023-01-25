@@ -24,6 +24,8 @@
 
  - [x] Rodapé responsivo;
 
+ - [ ] Tornar a tabela de CEP responsiva;
+
  *Funcionalidades*
 
  - [x] Inserir CEP no input e ao clicar no botão "Buscar" mostrar informações do cep no console;
@@ -32,6 +34,6 @@
 
  - [x] Organizar Informações do CEP na tabela;
 
- - [ ] Validar dados do input;
+ - [x] Validar dados do input de CEP;
 
  - [ ] Localizar encomenda e exibir na tela estilizado;

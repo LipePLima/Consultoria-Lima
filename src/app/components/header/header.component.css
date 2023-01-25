@@ -9,7 +9,7 @@
 .img__header {
   width: 250px;
   height: 250px;
-  margin-left: 127px;
+  margin-left: 137px;
 }
 
 .menu__header {
@@ -19,7 +19,7 @@
 }
 
 .menu-item {
-  font: 500 22px 'Lato', sans-serif;
+  font: 500 22px 'Lora', serif;
   text-decoration: none;
   color: #000;
   padding: 0;
