@@ -18,6 +18,7 @@ export class CepComponent {
     const div:                 Element | null = document.getElementById('container__info');
 
     const convertDiv = div as HTMLElement;
+    convertDiv!.style.display = 'none'
 
     cep = cep.replace(/\D/g, '');
 
@@ -28,23 +29,27 @@ export class CepComponent {
       this.checkCep(inputErroBorder, inputErro, "Digite 8 números");
 
     } else {
-      inputErro!.style.display      = 'none'
-      inputErroBorder!.style.border = 'none'
-      convertDiv!.style.display     = 'flex'
-
-      this.smallWindow(cep)
-
       this.cepService.searchAddress(cep).toPromise().then( (data: any) => {
         const cepEl:      Element | null = document.querySelector('#cep');
         const log:        Element | null = document.querySelector('#logradouro');
         const bairro:     Element | null = document.querySelector('#bairro');
         const localidade: Element | null = document.querySelector('#localidade');
 
-        cepEl!.textContent      = data.cep;
-        log!.textContent        = data.logradouro;
-        bairro!.textContent     = data.bairro; ;
-        localidade!.textContent = `${data.localidade}/${data.uf}`;
+        if (data.erro == true) {
+          this.checkCep(inputErroBorder, inputErro, "CEP inválido, tente novamente");
+        } else {
+          inputErro!.style.display      = 'none'
+          inputErroBorder!.style.border = 'none'
+          convertDiv!.style.display     = 'flex'
 
+          this.smallWindow(data)
+
+          cepEl!.textContent      = data.cep;
+          log!.textContent        = data.logradouro;
+          bairro!.textContent     = data.bairro; ;
+          localidade!.textContent = `${data.localidade}/${data.uf}`;
+
+        }
       });
     }
   }
@@ -55,18 +60,15 @@ export class CepComponent {
     border!.style.border = '1px solid red'
   }
 
-  private smallWindow (cep: any) {
-    this.cepService.searchAddress(cep).toPromise().then( (data: any) => {
-      const cepEl:      Element | null = document.querySelector('#info__cep');
-      const log:        Element | null = document.querySelector('#info__logradouro');
-      const bairro:     Element | null = document.querySelector('#info__bairro');
-      const localidade: Element | null = document.querySelector('#info__localidade');
+  private smallWindow (data: any) {
+    const cepEl:      Element | null = document.querySelector('#info__cep');
+    const log:        Element | null = document.querySelector('#info__logradouro');
+    const bairro:     Element | null = document.querySelector('#info__bairro');
+    const localidade: Element | null = document.querySelector('#info__localidade');
 
-      cepEl!.textContent      = data.cep;
-      log!.textContent        = data.logradouro;
-      bairro!.textContent     = data.bairro; ;
-      localidade!.textContent = `${data.localidade}/${data.uf}`;
-
-    });
+    cepEl!.textContent      = data.cep;
+    log!.textContent        = data.logradouro;
+    bairro!.textContent     = data.bairro; ;
+    localidade!.textContent = `${data.localidade}/${data.uf}`;
   }
 }
