@@ -27,11 +27,19 @@
 
 .input-ras {
   font-size: 20px;
+  text-transform: uppercase;
   width: 320px;
   height: 36px;
   padding-left: .5rem;
   border-radius: 10px;
   border: none;
+}
+
+.erro {
+  display: none;
+  font-size: 13px;
+  color: red;
+  margin: .5rem 0 0 .3rem;
 }
 
 .btn-ras {
