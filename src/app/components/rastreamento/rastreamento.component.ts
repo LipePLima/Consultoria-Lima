@@ -12,15 +12,13 @@ export class RastreamentoComponent {
     private rastreamentoService: RastreamentoService
   ) { }
 
+  public text: any = 'Digite um código de rastreamento'
   public list: any
 
   public getEncomenda (rastreamento: any): void {
     this.rastreamentoService.searchPackage(rastreamento).toPromise().then( (data: any) => {
+      this.text = ''
       this.list = data!.eventos
-      
-      console.log(data)
-      console.log(data!.eventos.length)
-      console.log(data!.eventos[1].data)
     })
   }
 }

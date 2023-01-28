@@ -3,18 +3,27 @@
 
   <div class="container-input__ras">
     <label for="iRas" class="label-ras">Digite o código de rastreamento :</label>
-    <input type="text" class="input-ras" id="iRas" name="ras" ngModel #inputRas="ngModel">
+    <input type="text" maxlength="14"class="input-ras" id="iRas" name="ras" ngModel #inputRas="ngModel">
     <p class="erro" id="erro"></p>
   </div>
 
   <button class="btn-ras" (click)="getEncomenda(inputRas.value)">Localizar</button>
 
-  <div class="container__content-ras" id="ras__content" >
-    <div class="content-ras" *ngFor="let item of list">
-      <p id="staus">{{ item.status }}</p>
-      <p id="origin">{{ item.local }}</p>
-      <p id="destiny" *ngIf="item.subStatus">{{ item.subStatus[1] }}</p>
-      <p id="date">{{ item.data }} {{ item.hora}}</p>
-    </div>
-  </div>
+  <ul class="container__content-ras">
+    <p>{{ text }}</p>
+    <li class="content-ras" *ngFor="let item of list">
+      <div class="ras__status">
+        <div class="ras-icon"></div>
+      </div>
+      <div class="ras__info">
+        <p class="status">{{ item.status }}</p>
+        <p class="origin" *ngIf="item.subStatus.length > 0; else elseBlock">{{ item.subStatus[0] }}</p>
+        <ng-template #elseBlock>
+          <p class="origin">{{ item.local }}</p>
+        </ng-template>
+        <p class="destiny" *ngIf="item.subStatus">{{ item.subStatus[1] }}</p>
+        <p class="date">{{ item.data }} {{ item.hora}}</p>
+      </div>
+    </li>
+  </ul>
 </section>

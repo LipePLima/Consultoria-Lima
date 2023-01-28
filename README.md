@@ -47,7 +47,7 @@
 
  - [x] Localizar encomenda;
 
- - [ ] Exibir rastreamento de encomenda;
+ - [x] Exibir rastreamento de encomenda;
 
 ## Tecnologias
 

@@ -1,9 +1,8 @@
 .container__ras {
-  height: 720px;
   margin: 58px 156px 96px 156px;
   background-color: #D1D1D1;
   border-radius: 10px;
-  padding: 46px 56px 0 56px;
+  padding: 46px 56px 46px 56px;
   font-family: 'Lato', sans-serif;
 }
 
@@ -58,6 +57,7 @@
   background-color: #00416B;
 }
 
+/* Informações de rota da encomenda */
 .container__content-ras {
   background-color: #ffff;
   margin: 2rem 0;
@@ -65,3 +65,43 @@
   border-radius: 5px;
 }
 
+.content-ras {
+  display: flex;
+}
+
+.content-ras:last-child .ras__status{
+  border: none;
+}
+
+.content-ras:nth-child(2) .ras-icon{
+  background-color: rgb(20, 20, 20);
+}
+
+.ras__status {
+  width: 8px;
+  border-right: 2px solid yellow;
+}
+
+.ras-icon {
+  position: relative;
+  top: 3px;
+  width: 16px;
+  height: 16px;
+  transform: rotate(45deg);
+  border: 1px solid black;
+  background-color: #ffff;
+}
+
+.ras__info {
+  margin: 0 0 1.5rem 1.5rem;
+}
+
+.status {
+  font-weight: bold;
+  color: #2E266D;
+}
+
+.origin, .destiny, .date {
+  font-size: 14px;
+  margin-top: 6px;
+}
