@@ -12,8 +12,8 @@ export class RastreamentoComponent {
   ) { }
 
   public getEncomenda (rastreamento: any): void {
-    this.rastreamentoService.searchPackage(rastreamento).toPromise()
-    .catch( (data: any) => {
+    const att: Promise<Object | undefined> = this.rastreamentoService.searchPackage(rastreamento).toPromise()
+    att.then( (data: Object | undefined) => {
       console.log(data)
     })
   }
