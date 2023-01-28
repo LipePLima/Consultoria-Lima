@@ -45,7 +45,7 @@
 
  - [x] Validar dados do input de CEP;
 
- - [ ] Localizar encomenda;
+ - [x] Localizar encomenda;
 
  - [ ] Exibir rastreamento de encomenda;
 

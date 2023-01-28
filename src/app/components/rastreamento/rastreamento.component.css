@@ -1,9 +1,9 @@
 .container__ras {
-  height: 512px;
+  height: 720px;
   margin: 58px 156px 96px 156px;
   background-color: #D1D1D1;
   border-radius: 10px;
-  padding: 46px 0 0 56px;
+  padding: 46px 56px 0 56px;
   font-family: 'Lato', sans-serif;
 }
 
@@ -57,3 +57,11 @@
 .btn-ras:hover {
   background-color: #00416B;
 }
+
+.container__content-ras {
+  background-color: #ffff;
+  margin: 2rem 0;
+  padding: 1rem 1rem;
+  border-radius: 5px;
+}
+

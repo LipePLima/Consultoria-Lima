@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { switchMapTo } from 'rxjs';
 import { RastreamentoService } from '../../services/rastreamento.service';
 
 @Component({
@@ -11,10 +12,15 @@ export class RastreamentoComponent {
     private rastreamentoService: RastreamentoService
   ) { }
 
+  public list: any
+
   public getEncomenda (rastreamento: any): void {
-    const att: Promise<Object | undefined> = this.rastreamentoService.searchPackage(rastreamento).toPromise()
-    att.then( (data: Object | undefined) => {
+    this.rastreamentoService.searchPackage(rastreamento).toPromise().then( (data: any) => {
+      this.list = data!.eventos
+      
       console.log(data)
+      console.log(data!.eventos.length)
+      console.log(data!.eventos[1].data)
     })
   }
 }

@@ -9,4 +9,12 @@
 
   <button class="btn-ras" (click)="getEncomenda(inputRas.value)">Localizar</button>
 
+  <div class="container__content-ras" id="ras__content" >
+    <div class="content-ras" *ngFor="let item of list">
+      <p id="staus">{{ item.status }}</p>
+      <p id="origin">{{ item.local }}</p>
+      <p id="destiny" *ngIf="item.subStatus">{{ item.subStatus[1] }}</p>
+      <p id="date">{{ item.data }} {{ item.hora}}</p>
+    </div>
+  </div>
 </section>
