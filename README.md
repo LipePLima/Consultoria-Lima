@@ -9,7 +9,7 @@
 
 ## Descrição
 
-![Status: em desenvolvimento](https://img.shields.io/badge/STATUS-Em%20desenvolvimento-blue)
+Consultoria Lima tem como propósito localizar o endereço de CEP de sua preferência. Também localizar e informar o status de sua encomenda!
 
 ## Etapas 
 
