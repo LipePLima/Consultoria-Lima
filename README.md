@@ -61,11 +61,13 @@ Hospedagem:
 
 <h3> :camera: Página Desktop</h3>
 
-![Status: em desenvolvimento](https://img.shields.io/badge/STATUS-Em%20desenvolvimento-blue)
+![Desktop CEP](https://user-images.githubusercontent.com/102830741/215628938-9e527f86-37ff-442f-8487-8cd4c31f4b44.png)
+![Desktop Rastreamento](https://user-images.githubusercontent.com/102830741/215629045-a356ac4f-7c8b-487b-9d3d-15b132b539a8.png)
 
 <h3> :camera: Página Mobile</h3>
 
-![Status: em desenvolvimento](https://img.shields.io/badge/STATUS-Em%20desenvolvimento-blue)
+![Mobile CEP](https://user-images.githubusercontent.com/102830741/215629320-73afdb80-0ca2-44df-896a-035bc98e08a9.png)
+![Mobile Rastreamento](https://user-images.githubusercontent.com/102830741/215629332-ef223dbf-26c9-4724-8ed2-b0007b02bfed.png)
 
 ## Depoimento
 
