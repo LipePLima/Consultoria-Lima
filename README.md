@@ -9,7 +9,8 @@
 
 ## Descrição
 
-Consultoria Lima tem como propósito localizar o endereço de CEP de sua preferência. Também localizar e informar o status de sua encomenda!
+Consultoria Lima tem como propósito localizar o endereço de CEP de sua preferência. Também localizar e informar o status de sua encomenda! 
+O projeto foi criado com o propósito de aprender a integrar API e exibir os dados de maneira dinâmica, também pude aprender a utilizar rotas para exibir o conteúdo de CEP quando clicado o botão CEP, e exibir o conteúdo de rastreamento quando clicado o botão Rastreamento. Tudo isso em uma única página!
 
 ## Etapas 
 
@@ -61,15 +62,18 @@ Hospedagem:
 
 <h3> :camera: Página Desktop</h3>
 
-![Status: em desenvolvimento](https://img.shields.io/badge/STATUS-Em%20desenvolvimento-blue)
+![Desktop CEP](https://user-images.githubusercontent.com/102830741/215628938-9e527f86-37ff-442f-8487-8cd4c31f4b44.png)
+![Desktop Rastreamento](https://user-images.githubusercontent.com/102830741/215629045-a356ac4f-7c8b-487b-9d3d-15b132b539a8.png)
 
 <h3> :camera: Página Mobile</h3>
 
-![Status: em desenvolvimento](https://img.shields.io/badge/STATUS-Em%20desenvolvimento-blue)
+![Mobile CEP](https://user-images.githubusercontent.com/102830741/215629320-73afdb80-0ca2-44df-896a-035bc98e08a9.png)
+![Mobile Rastreamento](https://user-images.githubusercontent.com/102830741/215629332-ef223dbf-26c9-4724-8ed2-b0007b02bfed.png)
 
 ## Depoimento
 
-![Status: em desenvolvimento](https://img.shields.io/badge/STATUS-Em%20desenvolvimento-blue)
+Foi um projeto extreamente desafiador, que me fez questionar até se eu realmente devo ser desenvolvedor kkkkk Mas nada é impossível e continuei tentando até conseguir. O resultado não foi diferente, consegui resolver o problema de integração de api e depois eu já estava me senti preparado para lidar com os próximos problemas.
+Foram 10 dias de projeto, muito aprendizado, muitas emoções que senti aqui! Uma das coisas que mais achei bacana e busquei preservar, foi a evolução que tive com a integração de api. Foram necessárias 2 api's e a primeira foi a Via Cep, onde eu tive muita dificuldade e toda a manipulação do DOM foi feita no arquivo typescript. Já na segunda api de rastreamento de encomenda, busquei exibir os dados criando uma variável pública contendo os eventos de rota, utilizando o *ngFor para criar li's no HTML contendo cada evento e valores dinâmicos a partir da variável pública. Também utilizei *ngIf e ng-templates para verificar o array subStatus onde contém a origem e o destino, caso o objeto esteja em rota. Estando vazio, o conteúdo exibido será o local onde a encomenda se encontra.
 
 ## Contato
 
