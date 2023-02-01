@@ -21,7 +21,7 @@
         <ng-template #elseBlock>
           <p class="origin">{{ item.local }}</p>
         </ng-template>
-        <p class="destiny" *ngIf="item.subStatus">{{ item.subStatus[1] }}</p>
+        <p class="destiny" *ngIf="item.subStatus.length > 0">{{ item.subStatus[1] }}</p>
         <p class="date">{{ item.data }} {{ item.hora}}</p>
       </div>
     </li>

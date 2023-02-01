@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { switchMapTo } from 'rxjs';
 import { RastreamentoService } from '../../services/rastreamento.service';
 
 @Component({
@@ -15,13 +14,13 @@ export class RastreamentoComponent {
   public text: any = 'Digite um código de rastreamento'
   public list: any
 
-  public getEncomenda (rastreamento: any): void {
+  public getEncomenda (rastreamento: string): void {
     const inputErro: HTMLElement | null = document.getElementById('iRas');
     const error    : HTMLElement | null = document.getElementById('erro');
 
-    const regexTest = /^[A-Z]{2}[1-9]{9}[A-Z]{2}$/
+    const regex: RegExp = /^[A-Z]{2}[0-9]{9}[A-Z]{2}$/g;
 
-    rastreamento = rastreamento.replace(regexTest, '')
+    const checkRastreamento = rastreamento.replace(regex, 'correto')
 
     if (rastreamento == '') {
       this.checkCep(inputErro, error, 'Digite um código')
@@ -29,14 +28,24 @@ export class RastreamentoComponent {
     } else if (rastreamento.length < 13) {
       this.checkCep(inputErro, error, 'OBRIGATÓRIO: 9 números e 4 letras')
 
+    } else if (checkRastreamento !== 'correto') {
+      this.checkCep(inputErro, error, 'Digite um código válido')
+
+    } else {
+      error!.style.display  = 'none'
+      inputErro!.style.border = 'none'
+
+      this.rastreamentoService.searchPackage(rastreamento).toPromise().then( (data: any) => {
+        this.text = ''
+        this.list = data!.eventos
+      })
+
+      this.rastreamentoService.searchPackage(rastreamento).toPromise().catch( (data: any) => {
+        console.log(data)
+        console.log(data!.error)
+      })
     }
-
-    this.rastreamentoService.searchPackage(rastreamento).toPromise().then( (data: any) => {
-      this.text = ''
-      this.list = data!.eventos
-    })
   }
-
 
   private checkCep (border: any, erro: any, text: any) {
     erro!.textContent    = text

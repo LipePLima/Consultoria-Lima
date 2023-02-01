@@ -12,7 +12,7 @@ export class CepComponent {
     private cepService: SearchCepService,
   ){}
 
-  public getAddress(cep: any): void {
+  public getAddress(cep: string): void {
     const inputErroBorder: HTMLElement | null = document.getElementById('iCep');
     const inputErro:       HTMLElement | null = document.getElementById('erro');
     const div:                 Element | null = document.getElementById('container__info');
