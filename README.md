@@ -12,6 +12,8 @@
 Consultoria Lima tem como propósito localizar o endereço de CEP de sua preferência. Também localizar e informar o status de sua encomenda! 
 O projeto foi criado com o propósito de aprender a integrar API e exibir os dados de maneira dinâmica, também pude aprender a utilizar rotas para exibir o conteúdo de CEP quando clicado o botão CEP, e exibir o conteúdo de rastreamento quando clicado o botão Rastreamento. Tudo isso em uma única página!
 
+Observação: A api de rastreamento possui algumas limitações fazendo com que os eventos não apareçam por erro de muitas requisições. Por hora, continue tentando até que as informações apareçam! Estou trabalhando para que esse problema seja resolvido.
+
 ## Etapas 
 
 **Desktop Firt**
