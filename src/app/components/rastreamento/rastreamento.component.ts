@@ -21,12 +21,15 @@ export class RastreamentoComponent {
     error!.style.display  = 'none'
     inputErro!.style.border = 'none'
 
-    this.checkRastreamento(rastreamento, inputErro, error)
+    const validation = this.checkRastreamento(rastreamento, inputErro, error)
 
-    this.rastreamentoService.searchPackage(rastreamento).toPromise().then( (data: any) => {
-      this.text = ''
-      this.list = data!.eventos
-    })
+    if (validation === "Tudo certo") {
+      this.rastreamentoService.searchPackage(rastreamento).toPromise().then( (data: any) => {
+        this.text = ''
+        this.list = data!.eventos
+      })
+      
+    }
 
     // this.rastreamentoService.searchPackage(rastreamento).toPromise().catch( (data: any) => {
     //   console.log(data)
@@ -35,7 +38,7 @@ export class RastreamentoComponent {
 
   }
 
-  private checkRastreamento (rastreamento: string, border: any, erro: any) {
+  private checkRastreamento (rastreamento: string, border: HTMLElement | null, erro: HTMLElement | null) {
     const regex: RegExp = /^[A-Z]{2}[0-9]{9}[A-Z]{2}$/g;
     const regexRastreamento = rastreamento.replace(regex, 'correto')
 
@@ -54,17 +57,20 @@ export class RastreamentoComponent {
       }
     ];
 
-    erros.forEach( object => {
-      if (object.type == true) {
-          erro!.textContent    = ''
-          erro!.textContent    = object.mensage
-          erro!.style.display  = 'initial'
-          border!.style.border = '1px solid red'
-          return console.log(object.type)
-      } else {
-        return ''
-      }
-    })
+    for (let i = 0; i < erros.length; i++) {
+      if (erros[i].type) {
+        return this.styleErro(erros[i].mensage, border, erro)
 
+      } if (erros[2].type == false) {
+        return 'Tudo certo'
+
+      }
+    }
+  }
+
+  private styleErro (mensage: string, border: HTMLElement | null, erro:   HTMLElement | null) {
+    erro!.textContent    = mensage
+    erro!.style.display  = 'initial'
+    border!.style.border = '1px solid red'
   }
 }
