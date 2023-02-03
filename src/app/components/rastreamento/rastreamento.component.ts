@@ -18,38 +18,53 @@ export class RastreamentoComponent {
     const inputErro: HTMLElement | null = document.getElementById('iRas');
     const error    : HTMLElement | null = document.getElementById('erro');
 
-    const regex: RegExp = /^[A-Z]{2}[0-9]{9}[A-Z]{2}$/g;
+    error!.style.display  = 'none'
+    inputErro!.style.border = 'none'
 
-    const checkRastreamento = rastreamento.replace(regex, 'correto')
+    this.checkRastreamento(rastreamento, inputErro, error)
 
-    if (rastreamento == '') {
-      this.checkCep(inputErro, error, 'Digite um código')
+    this.rastreamentoService.searchPackage(rastreamento).toPromise().then( (data: any) => {
+      this.text = ''
+      this.list = data!.eventos
+    })
 
-    } else if (rastreamento.length < 13) {
-      this.checkCep(inputErro, error, 'OBRIGATÓRIO: 9 números e 4 letras')
+    // this.rastreamentoService.searchPackage(rastreamento).toPromise().catch( (data: any) => {
+    //   console.log(data)
+    //   console.log(data!.error)
+    // })
 
-    } else if (checkRastreamento !== 'correto') {
-      this.checkCep(inputErro, error, 'Digite um código válido')
-
-    } else {
-      error!.style.display  = 'none'
-      inputErro!.style.border = 'none'
-
-      this.rastreamentoService.searchPackage(rastreamento).toPromise().then( (data: any) => {
-        this.text = ''
-        this.list = data!.eventos
-      })
-
-      this.rastreamentoService.searchPackage(rastreamento).toPromise().catch( (data: any) => {
-        console.log(data)
-        console.log(data!.error)
-      })
-    }
   }
 
-  private checkCep (border: any, erro: any, text: any) {
-    erro!.textContent    = text
-    erro!.style.display  = 'initial'
-    border!.style.border = '1px solid red'
+  private checkRastreamento (rastreamento: string, border: any, erro: any) {
+    const regex: RegExp = /^[A-Z]{2}[0-9]{9}[A-Z]{2}$/g;
+    const regexRastreamento = rastreamento.replace(regex, 'correto')
+
+    const erros = [
+      {
+        type: rastreamento == '',
+        mensage: 'Digite um código'
+      },
+      {
+        type: rastreamento.length < 13,
+        mensage: 'OBRIGATÓRIO: 9 números e 4 letras'
+      },
+      {
+        type: regexRastreamento !== 'correto',
+        mensage: 'Digite um código válido'
+      }
+    ];
+
+    erros.forEach( object => {
+      if (object.type == true) {
+          erro!.textContent    = ''
+          erro!.textContent    = object.mensage
+          erro!.style.display  = 'initial'
+          border!.style.border = '1px solid red'
+          return console.log(object.type)
+      } else {
+        return ''
+      }
+    })
+
   }
 }
