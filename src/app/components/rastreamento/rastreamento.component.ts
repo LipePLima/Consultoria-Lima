@@ -28,13 +28,20 @@ export class RastreamentoComponent {
         this.text = ''
         this.list = data!.eventos
       })
-      
+
     }
 
-    // this.rastreamentoService.searchPackage(rastreamento).toPromise().catch( (data: any) => {
-    //   console.log(data)
-    //   console.log(data!.error)
-    // })
+    this.rastreamentoService.searchPackage(rastreamento).toPromise().catch( (data: any) => {
+      const error  = data!.error
+      const result = error.replace(/[^0-9]/g, '')
+      const number = parseInt(result)
+
+      console.log(number)
+
+      setInterval( () => {
+        console.log(number - 1000)
+      }, 1000)
+    })
 
   }
 
@@ -61,10 +68,11 @@ export class RastreamentoComponent {
       if (erros[i].type) {
         return this.styleErro(erros[i].mensage, border, erro)
 
-      } if (erros[2].type == false) {
+      } if (erros[erros.length-1].type == false) {
         return 'Tudo certo'
 
       }
+
     }
   }
 
