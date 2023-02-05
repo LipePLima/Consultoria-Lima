@@ -32,14 +32,32 @@ export class RastreamentoComponent {
     }
 
     this.rastreamentoService.searchPackage(rastreamento).toPromise().catch( (data: any) => {
-      const error  = data!.error
-      const result = error.replace(/[^0-9]/g, '')
-      const number = parseInt(result)
+      const erro  = data!.error
+      const result = erro.replace(/[^0-9]/g, '')
 
-      console.log(number)
+      let digits = ("" + result).split("");
+      let second = parseInt(digits[0]);
 
-      setInterval( () => {
-        console.log(number - 1000)
+      if (parseInt(digits[1]) > 5) {
+        second = second + 1
+      }
+
+      if (digits.length < 4) {
+        second = 0
+      }
+
+      let timeOut = setInterval( () => {
+        let t = second--
+
+        if (this.list == undefined) {
+          this.styleErro(`Desculpe, tente novamente em ${t}s`, inputErro, error)
+        }
+
+        if (t == 0) {
+          clearInterval(timeOut)
+          this.styleErro('Tente novamente!', inputErro, error)
+        }
+
       }, 1000)
     })
 
