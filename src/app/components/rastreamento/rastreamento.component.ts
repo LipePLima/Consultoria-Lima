@@ -1,3 +1,4 @@
+import { checkObjectErro } from './interface';
 import { Component } from '@angular/core';
 import { RastreamentoService } from '../../services/rastreamento.service';
 
@@ -29,8 +30,13 @@ export class RastreamentoComponent {
         this.list = data!.eventos
       })
 
+      this.apiError(rastreamento, inputErro, error)
+
     }
 
+  }
+
+  private apiError (rastreamento: string, border: HTMLElement | null, error: HTMLElement | null) {
     this.rastreamentoService.searchPackage(rastreamento).toPromise().catch( (data: any) => {
       const erro  = data!.error
       const result = erro.replace(/[^0-9]/g, '')
@@ -50,24 +56,24 @@ export class RastreamentoComponent {
         let t = second--
 
         if (this.list == undefined) {
-          this.styleErro(`Desculpe, tente novamente em ${t}s`, inputErro, error)
+          this.styleErro(`Desculpe, tente novamente em ${t}s`, border, error)
         }
 
         if (t == 0) {
           clearInterval(timeOut)
-          this.styleErro('Tente novamente!', inputErro, error)
+          this.styleErro('Tente novamente!', border, error)
         }
 
       }, 1000)
     })
-
   }
 
   private checkRastreamento (rastreamento: string, border: HTMLElement | null, erro: HTMLElement | null) {
+
     const regex: RegExp = /^[A-Z]{2}[0-9]{9}[A-Z]{2}$/g;
     const regexRastreamento = rastreamento.replace(regex, 'correto')
 
-    const erros = [
+    const erros: checkObjectErro[] = [
       {
         type: rastreamento == '',
         mensage: 'Digite um código'
