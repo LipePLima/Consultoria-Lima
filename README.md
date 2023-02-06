@@ -12,9 +12,9 @@
 Consultoria Lima tem como propósito localizar o endereço de CEP de sua preferência. Também localizar e informar o status de sua encomenda! 
 O projeto foi criado com o propósito de aprender a integrar API e exibir os dados de maneira dinâmica, também pude aprender a utilizar rotas para exibir o conteúdo de CEP quando clicado o botão CEP, e exibir o conteúdo de rastreamento quando clicado o botão Rastreamento. Tudo isso em uma única página!
 
-*Observação*: A api de rastreamento possui algumas limitações fazendo com que os eventos não apareçam por erro de muitas requisições. Por hora, continue tentando até que as informações apareçam! Estou trabalhando para que esse problema seja resolvido.
+**Observação**: A api de rastreamento possui algumas limitações fazendo com que os eventos não apareçam por erro de muitas requisições. Por hora, continue tentando até que as informações apareçam! Estou trabalhando para que esse problema seja resolvido.
 
-*Nota de atualização*: No componente Rastreamento, foram feitas algumas alterações: Foi criado uma função para validação de código de rastreamento, retirando esta responsabilidade da função getEncomenda; Para uma melhor orientação ao usuário quando a API retornar erro. Criei uma nova consulta, desta vez utilizando o método Catch() para retornar em JSON o erro com o tempo para uma nova tentativa. Foi feito o tratamento necessário para informar o usuário em quanto tempo será a nova tentativa utilizando a função setInterval.
+**Nota de atualização**: No componente Rastreamento, foram feitas algumas alterações: Foi criado uma função para validação de código de rastreamento, retirando esta responsabilidade da função getEncomenda; Para uma melhor orientação ao usuário quando a API retornar erro. Criei uma nova consulta, desta vez utilizando o método Catch() para retornar em JSON o erro com o tempo para uma nova tentativa. Foi feito o tratamento necessário para informar o usuário em quanto tempo será a nova tentativa utilizando a função setInterval.
 
 ## Etapas 
 
